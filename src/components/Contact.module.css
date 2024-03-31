@@ -1,0 +1,15 @@
+.contactContainer {
+  padding: 27px 54px 27px 47px;
+  display: flex;
+  align-items: center;
+}
+
+.contactButton {
+  background-color: #bb8248;
+  display: inline-flex;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}

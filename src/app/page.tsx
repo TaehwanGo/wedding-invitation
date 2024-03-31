@@ -1,113 +1,72 @@
+import Section from "@/components/Section";
+import styles from "./Home.module.css";
+import clsx from "clsx";
 import Image from "next/image";
+import SmsIcon from "@/components/icon/SmsIcon";
+import TelIcon from "@/components/icon/TelIcon";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex min-h-screen flex-col items-center max-w-screen-sm m-auto">
+      <Section>
+        {/* image container div */}
+        <div className={styles.cover}>
+          <div className={clsx(styles.coverTextLayer)}>
+            <h1 className="text-[2rem]">우리 결혼합니다</h1>
+            <h2 className="text-[22px] mt-[30px]">고태환 & 김성진</h2>
+            <p className="mt-[38px]">2024년 05월 12일 일요일 오후 1시</p>
+            <p className="mt-[10px]">더빈컨벤션웨딩홀 4F 그랜드볼룸</p>
+            <p className="mt-[36px]">충북 청주시 흥덕구 강내면 학천길 5</p>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+      </Section>
+      <Section
+        className={`text-center p-[52px] pb-[37px] ${styles.koPubBatang}`}
+      >
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          className="m-auto"
+          src="/images/greeting.png"
+          width={96}
+          height={40}
+          alt="greeting"
+        ></Image>
+        <div className={`mt-[22px]`}>
+          <p>삶의 새로운 장을 열며</p>
+          <p>저희는 서로의 동반자로 걸음을</p>
+          <p>내딛기로 결심했습니다</p>
+          <p>여러분의 따듯한 마음과 축복 속에서</p>
+          <p>저희의 약속을 공유하는</p>
+          <p>시간을 갖고 싶습니다</p>
+          <p>새로운 시작을 함께</p>
+          <p>축하해 주시면</p>
+          <p>감사하겠습니다</p>
+        </div>
+        <Image
+          className="m-auto mt-[11px] mb-[12px]"
+          src={"/images/vLine1.png"}
+          width={1}
+          height={42}
+          alt="line"
+        ></Image>
+        <p>고상호·김복희의 장남 고태환</p>
+        <p>김인택·허명숙의 장녀 김성진</p>
+      </Section>
+      <Section className="bg-[#FFE7D1]">
+        <Contact text="신랑에게 연락하기" contactNumber={"01071023094"} />
+        <Contact text="신부에게 연락하기" contactNumber={"01043838392"} />
+      </Section>
+      <Section className="bg-[#FAEEE4]">
+        <h2 className={styles.contactTitle}>혼주에게 연락하기</h2>
+        <h3 className={styles.contactSubTitle}>신랑 측 혼주</h3>
+        <Contact text="아버지 고상호" contactNumber={"01094173094"} />
+        <Contact text="어머니 김복희" contactNumber={"01056693582"} />
+      </Section>
+      <Section className="bg-[#FAEEE4]">
+        <h3 className={styles.contactSubTitle}>신부 측 혼주</h3>
+        <Contact text="아버지 김인택" contactNumber={"01029560452"} />
+        <Contact text="어머니 허명숙" contactNumber={"01071440452"} />
+      </Section>
     </main>
   );
 }
