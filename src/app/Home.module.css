@@ -42,3 +42,13 @@
   padding-bottom: 9px;
   text-align: center;
 }
+
+.swiperWrapper div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumbSlide {
+  margin: 0 !important;
+  cursor: pointer;
+}

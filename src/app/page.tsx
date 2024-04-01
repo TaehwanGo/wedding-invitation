@@ -1,16 +1,26 @@
+"use client";
+
 import Section from "@/components/Section";
 import styles from "./Home.module.css";
 import clsx from "clsx";
 import Image from "next/image";
-import SmsIcon from "@/components/icon/SmsIcon";
-import TelIcon from "@/components/icon/TelIcon";
 import Contact from "@/components/Contact";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as Swiper1 } from "swiper";
+
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { CSSProperties, useState } from "react";
 
 export default function Home() {
+  const [thumbsSwiper, setThumbsSwiper] = useState<Swiper1 | null>(null);
   return (
     <main className="flex min-h-screen flex-col items-center max-w-screen-sm m-auto">
       <Section>
-        {/* image container div */}
         <div className={styles.cover}>
           <div className={clsx(styles.coverTextLayer)}>
             <h1 className="text-[2rem]">우리 결혼합니다</h1>
@@ -66,6 +76,73 @@ export default function Home() {
         <h3 className={styles.contactSubTitle}>신부 측 혼주</h3>
         <Contact text="아버지 김인택" contactNumber={"01029560452"} />
         <Contact text="어머니 허명숙" contactNumber={"01071440452"} />
+      </Section>
+      <Section>
+        <Swiper
+          style={
+            {
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#fff",
+            } as CSSProperties
+          }
+          loop={true}
+          spaceBetween={10}
+          navigation={true}
+          thumbs={{ swiper: thumbsSwiper }}
+          modules={[FreeMode, Navigation, Thumbs]}
+        >
+          <SwiperSlide>
+            <img
+              src="/images/cover.png"
+              className="aspect-square object-cover object-top"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          </SwiperSlide>
+        </Swiper>
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          loop={true}
+          spaceBetween={10}
+          slidesPerView={4}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className={clsx("mt-2", styles.swiperWrapper)}
+        >
+          <SwiperSlide className={styles.thumbSlide}>
+            <img
+              src="/images/cover.png"
+              className="aspect-square object-cover object-center"
+            />
+          </SwiperSlide>
+          <SwiperSlide className={styles.thumbSlide}>
+            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          </SwiperSlide>
+          <SwiperSlide className={styles.thumbSlide}>
+            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          </SwiperSlide>
+          <SwiperSlide className={styles.thumbSlide}>
+            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          </SwiperSlide>
+        </Swiper>
+      </Section>
+      <Section>
+        <div className="mt-[55px] mb-4 flex justify-center">
+          <Image
+            src="/images/textMovie.png"
+            width={79}
+            height={40}
+            alt="movie"
+          ></Image>
+        </div>
       </Section>
     </main>
   );
