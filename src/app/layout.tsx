@@ -40,7 +40,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           {children}
-          {/* <KakaoScript /> */}
+          <KakaoScript />
         </Providers>
       </body>
     </html>

@@ -24,25 +24,29 @@ export default function Home() {
   const [thumbsSwiper, setThumbsSwiper] = useState<Swiper1 | null>(null);
   const [isKakaoLoad] = useRecoilState(kakaoLoadState);
 
-  // const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
 
-  // const handleShare = () => {
-  //   if (!isKakaoLoad) {
-  //     console.log("kakao not loaded");
-  //     return;
-  //   }
-  //   const { Kakao } = window;
+  const handleShare = () => {
+    if (!isKakaoLoad) {
+      console.log("kakao not loaded");
+      return;
+    }
+    const { Kakao } = window;
 
-  //   Kakao.Share.sendDefault({
-  //     objectType: "text",
-  //     text: "우리 결혼합니다",
-  //     description: "고태환 & 김성진 결혼합니다",
-  //     link: {
-  //       mobileWebUrl: shareUrl,
-  //       webUrl: shareUrl,
-  //     },
-  //   });
-  // };
+    Kakao.Share.sendDefault({
+      objectType: "feed",
+      content: {
+        title: "우리 결혼합니다",
+        description: "고태환 & 김성진 결혼식에 초대합니다",
+        imageUrl:
+          "https://wedding-invitation-peach-seven.vercel.app/images/cover.jpg",
+        link: {
+          mobileWebUrl: shareUrl,
+          webUrl: shareUrl,
+        },
+      },
+    });
+  };
 
   return (
     <main className="flex min-h-screen flex-col items-center max-w-screen-sm m-auto">
@@ -220,12 +224,12 @@ export default function Home() {
           <p className="mt-[9px]">신부 김성진 카카오뱅크 3333-05-2014727</p>
         </div>
       </Section>
-      {/* <Section className="bg-[#FFEB3B]" onClick={handleShare}>
+      <Section className="bg-[#FFEB3B]" onClick={handleShare}>
         <div className="flex justify-center items-center mt-[9px] mb-[9px]">
           <KakaoIcon />
           <p className="text-[18px] ml-[10px]">카카오톡 공유하기</p>
         </div>
-      </Section> */}
+      </Section>
       <Section className="bg-[#333333]">
         <div className={styles.congratulation}>
           <Image
