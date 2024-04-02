@@ -30,7 +30,7 @@ export default function RootLayout({
           property="og:description"
           content="축하해주시는 모든분께 감사합니다"
         />
-        <meta property="og:image" content="/images/cover.png" />
+        <meta property="og:image" content="/images/cover.jpg" />
         {/* eslint-disable-next-line @next/next/no-css-tags */}
         <link
           rel="stylesheet"
