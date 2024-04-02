@@ -7,3 +7,7 @@
 ## 음악
 
 - https://youtu.be/d7vxLKMS-LQ?si=4OAx-8yEt95y_3wK
+
+## TODO
+
+- 배포 후 카카오개발자에서 도메인 등록하기

@@ -3,7 +3,7 @@
   width: 100%;
   height: 190vw;
   max-height: 100vh;
-  background-image: url("/images/cover.png");
+  background-image: url("/images/cover.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -51,4 +51,22 @@
 .thumbSlide {
   margin: 0 !important;
   cursor: pointer;
+}
+
+.busTextWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 49px;
+  margin-bottom: 16px;
+}
+
+.congratulation {
+  padding: 44px 48px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: KoPub Batang;
+  font-weight: 200;
+  color: white;
+  font-size: 18px;
 }
