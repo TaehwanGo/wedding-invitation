@@ -7,6 +7,7 @@ import Image from "next/image";
 import Contact from "@/components/Contact";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as Swiper1 } from "swiper";
+import ReactPlayer from "react-player";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -165,7 +166,7 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </Section>
-      {/* <Section>
+      <Section>
         <div className="mt-[55px] mb-4 flex justify-center">
           <Image
             src="/images/textMovie.png"
@@ -174,7 +175,8 @@ export default function Home() {
             alt="movie"
           ></Image>
         </div>
-      </Section> */}
+        <ReactPlayer url="https://www.youtube.com/watch?v=lIvq30yGNZM&ab_channel=Tony" />
+      </Section>
       <Section>
         <div className="mt-[37px] mb-4 flex justify-center">
           <Image
