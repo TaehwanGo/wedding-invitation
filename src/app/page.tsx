@@ -175,7 +175,9 @@ export default function Home() {
             alt="movie"
           ></Image>
         </div>
-        <ReactPlayer url="https://www.youtube.com/watch?v=lIvq30yGNZM&ab_channel=Tony" />
+        <div className="flex">
+          <ReactPlayer url="https://www.youtube.com/watch?v=lIvq30yGNZM&ab_channel=Tony" />
+        </div>
       </Section>
       <Section>
         <div className="mt-[37px] mb-4 flex justify-center">
