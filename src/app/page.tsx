@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { CSSProperties, useEffect, useState } from "react";
+import { CSSProperties, useState } from "react";
 import Link from "next/link";
 import KakaoIcon from "@/components/icon/KakaoIcon";
 import { useRecoilState } from "recoil";
@@ -40,7 +40,7 @@ export default function Home() {
         title: "우리 결혼합니다",
         description: "고태환 & 김성진 결혼식에 초대합니다",
         imageUrl:
-          "https://wedding-invitation-peach-seven.vercel.app/images/cover.jpg",
+          "https://wedding-invitation-peach-seven.vercel.app/images/edit2.jpg",
         link: {
           mobileWebUrl: shareUrl,
           webUrl: shareUrl,
@@ -49,16 +49,37 @@ export default function Home() {
     });
   };
 
+  const images: { fileName: string }[] = [
+    {
+      fileName: "edit1.jpg",
+    },
+    {
+      fileName: "edit2.jpg",
+    },
+    {
+      fileName: "edit3.jpg",
+    },
+    {
+      fileName: "edit4.jpg",
+    },
+    {
+      fileName: "edit5.jpg",
+    },
+    {
+      fileName: "edit6.jpg",
+    },
+  ];
+
   return (
     <main className="flex min-h-screen flex-col items-center max-w-screen-sm m-auto">
       <Section>
         <div className={styles.cover}>
           <div className={clsx(styles.coverTextLayer)}>
             <h1 className="text-[2rem]">우리 결혼합니다</h1>
-            <h2 className="text-[22px] mt-[30px]">고태환 & 김성진</h2>
-            <p className="mt-[38px]">2024년 05월 12일 일요일 오후 1시</p>
+            <h2 className="text-[22px] mt-[22px]">고태환 & 김성진</h2>
+            <p className="mt-[30px]">2024년 05월 12일 일요일 오후 1시</p>
             <p className="mt-[10px]">더빈컨벤션웨딩홀 4F 그랜드볼룸</p>
-            <p className="mt-[36px]">충북 청주시 흥덕구 강내면 학천길 5</p>
+            <p className="mt-[30px]">충북 청주시 흥덕구 강내면 학천길 5</p>
           </div>
         </div>
       </Section>
@@ -122,48 +143,35 @@ export default function Home() {
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs]}
         >
-          <SwiperSlide>
-            <img
-              src="/images/cover.jpg"
-              className="aspect-square object-cover object-center"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-          </SwiperSlide>
+          {images.map((image) => (
+            <SwiperSlide key={image.fileName}>
+              <img
+                src={`/images/${image.fileName}`}
+                className="aspect-square object-cover object-center"
+                alt={image.fileName}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
         <Swiper
           onSwiper={setThumbsSwiper}
           loop={true}
-          spaceBetween={10}
+          spaceBetween={4}
           slidesPerView={4}
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
-          className={clsx("mt-2", styles.swiperWrapper)}
+          className={clsx("mt-1", styles.swiperWrapper)}
         >
-          <SwiperSlide className={styles.thumbSlide}>
-            <img
-              src="/images/cover.jpg"
-              className="aspect-square object-cover object-center"
-              alt="cover"
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles.thumbSlide}>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-          </SwiperSlide>
-          <SwiperSlide className={styles.thumbSlide}>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-          </SwiperSlide>
-          <SwiperSlide className={styles.thumbSlide}>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-          </SwiperSlide>
+          {images.map((image) => (
+            <SwiperSlide key={image.fileName} className={styles.thumbSlide}>
+              <img
+                src={`/images/${image.fileName}`}
+                className="aspect-square object-cover object-center"
+                alt={image.fileName}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Section>
       <Section>
@@ -222,10 +230,39 @@ export default function Home() {
         </div>
       </Section>
       <Section>
-        <div className="mt-[49px] mb-[31px] text-[18px] text-center">
-          <p>마음 전하는 곳</p>
-          <p className="mt-[18px]">신랑 고태환 농협은행 302-0027-8567-11</p>
-          <p className="mt-[9px]">신부 김성진 카카오뱅크 3333-05-2014727</p>
+        <div className="mt-[49px] mb-[31px] text-[18px] pl-2 pr-2">
+          <p className="text-center ">마음 전하는 곳</p>
+          <h5 className="mt-[18px] flex">
+            <img
+              className="mr-1"
+              src="/images/heart.png"
+              alt="heart"
+              width={24}
+            />
+            <div>신랑측</div>
+          </h5>
+          <ul style={{ listStyle: "inherit" }} className=" pl-[20px]">
+            <li className="mt-[9px]">신랑 고태환 농협은행 302-0027-8567-11</li>
+            <li className="mt-[9px]">
+              아버지 고상호 농협은행 401061-56-012923
+            </li>
+            <li className="mt-[9px]">어머니 김복희 우리은행 1002500577323</li>
+          </ul>
+          <h5 className="mt-[18px] flex">
+            <img
+              className="mr-1"
+              src="/images/heart.png"
+              alt="heart"
+              width={24}
+            />
+            <div>신부측</div>
+          </h5>
+          <ul style={{ listStyle: "inherit" }} className=" pl-[20px]">
+            <li className="mt-[9px]">신부 김성진 카카오뱅크 3333-05-2014727</li>
+            <li className="mt-[9px]">
+              아버지 김인택 하나은행 145-910016-74307
+            </li>
+          </ul>
         </div>
       </Section>
       <Section className="bg-[#FFEB3B]" onClick={handleShare}>
