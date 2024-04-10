@@ -212,6 +212,7 @@ export default function Home() {
           </Link>
         </div>
       </Section>
+      <hr className="mt-[30px] w-full m" />
       <Section>
         <div className={styles.busTextWrapper}>
           <Image src="/images/busText.png" width={54} height={40} alt="bus" />
@@ -229,6 +230,7 @@ export default function Home() {
           </Link>
         </div>
       </Section>
+      <hr className="mt-[30px] w-full" />
       <Section>
         <div className="mt-[49px] mb-[31px] text-[18px] pl-2 pr-2">
           <p className="text-center ">마음 전하는 곳</p>
@@ -262,6 +264,7 @@ export default function Home() {
             <li className="mt-[9px]">
               아버지 김인택 하나은행 145-910016-74307
             </li>
+            <li className="mt-[9px]">어머니 허명숙 KB국민 017002-04-209513</li>
           </ul>
         </div>
       </Section>
