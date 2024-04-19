@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
@@ -38,10 +39,13 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <Providers>
-          {children}
-          <KakaoScript />
-        </Providers>
+        <>
+          <Providers>
+            {children}
+            <KakaoScript />
+          </Providers>
+          <Analytics />
+        </>
       </body>
     </html>
   );
