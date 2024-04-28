@@ -223,6 +223,7 @@ export default function Home() {
           <p className="mt-[5px]">웨딩홀에서 출발하는 시간 오후 3시</p>
           <p className="mt-[35px]">잠실역 4번출구에서 직진,</p>
           <p>롯데마트 제타플렉스 잠실점 앞</p>
+          <p>차량번호: 전남70자4935</p>
         </div>
         <div className="flex justify-center">
           <Link href="https://naver.me/FU39qtyx" target="_blank">
