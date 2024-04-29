@@ -20,7 +20,6 @@ import Link from "next/link";
 import KakaoIcon from "@/components/icon/KakaoIcon";
 import { useRecoilState } from "recoil";
 import { kakaoLoadState } from "@/state/kakaoLoadState";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 export default function Home() {
