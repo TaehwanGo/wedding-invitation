@@ -20,6 +20,8 @@ import Link from "next/link";
 import KakaoIcon from "@/components/icon/KakaoIcon";
 import { useRecoilState } from "recoil";
 import { kakaoLoadState } from "@/state/kakaoLoadState";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function Home() {
   const [thumbsSwiper, setThumbsSwiper] = useState<Swiper1 | null>(null);
@@ -228,6 +230,15 @@ export default function Home() {
         <div className="flex justify-center">
           <Link href="https://naver.me/FU39qtyx" target="_blank">
             <img src="/images/busMap.png" width={360} height={219} alt="bus" />
+          </Link>
+        </div>
+        <div className="mt-4 flex justify-center">
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeAdXJ0jiipR9qM48QvaIm1qsU7Ac5hOQDWqIxoB4kX5vheqw/viewform?usp=sf_link"
+            target="_blank"
+            className="inline-flex items-center gap-1 text-blue-500 underline"
+          >
+            <FiExternalLink /> 버스 탑승 신청하기
           </Link>
         </div>
       </Section>
